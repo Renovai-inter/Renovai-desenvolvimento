@@ -112,10 +112,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
 body {
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
+    overflow-x: hidden;
+
+
+    background-image: url("/images/sobre_fundo.svg");
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #F8F6F2;
 }
 .header {
     width: 100vw;
@@ -125,21 +135,32 @@ img {
     max-width: 100vw;
 }
 
+button{
+   border: none;
+   outline: none;
+}
 .navbar {
-    width: 80%;
-    height: 80%;
-    justify-content: center;
+    width: 1361px;
+    height: 80px;
+
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
 
     display: flex;
-    align-items:center;
+    align-items: center;
 
-    padding: 0 20px;
+    padding: 0 25px;
 
-    background-color: #ffffff;
-
+    background-color: rgba(248, 246, 242, 0.7);
     border-radius: 40px;
 
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px);
 }
 
 
@@ -153,10 +174,9 @@ img {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 35px;
 
-    margin-left: 100px;
-    padding: auto;
+    margin-left: auto;
 
     list-style: none;
 }
@@ -170,7 +190,8 @@ img {
     padding: auto;
 }
 main {
-    min-height: 800px;
+     min-height: 800px;
+     padding-top: 116px;
 }
 
 button {
@@ -178,32 +199,85 @@ button {
     cursor: pointer;
 }
 
+h1{
+  line-height: 70px;
+}
+
 .title1 {
     color: #882B4E;
     font-weight: 900;
     font-size: 80px;
     font-family: 'Poppins',sans-serif;
+    line-height: 70px;
+    letter-spacing: 2%;
 }
 
 .title2 {
     color: #5E986B;
     font-weight: 900;
     font-size: 80px;
+   background: linear-gradient(90deg, #416b4c, #B2C29C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.cta1{
-    border-radius:29px;
-    padding: 8px;
-    width: 242px;
-    height: 59px;
+
+.cta1 {
+    border-radius: 29px;
+    padding: 8px 20px;
+    width: 261px;
+    height: 54px;
     background: linear-gradient(#882B4E, #B53566);
     color: #fff;
     font-size: 24px;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    margin-left: auto;
+    margin-left: 50px;
 }
-.hero-image {
-    width: 500px;
-    max-width: 100%;
+
+
+
+.conhecaRenovai{
+  background-color: #882B4E;
+  color: #fff;
+  padding: 7px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 29px;
+  font-weight: 600;
+  font-size: 22px;
 }
+
+
+.sobreNos{
+  background-color: #F8F6F2;
+  color: #416b4c;
+  border-color: #5E986B;
+  border-style: solid;
+
+  padding: 7px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 29px;
+  font-weight: 600;
+  font-size: 22px;
+  margin-left: 3%;
+}
+
+
+
+.hero-texto{
+  position: relative;
+  width: 45%;
+  margin-left: 6%;
+  margin-top: 1.8%;
+}
+
+.hero-texto p{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 0;
+  
+} 
