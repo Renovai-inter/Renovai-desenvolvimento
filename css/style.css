@@ -120,10 +120,12 @@ body {
     width: 100%;
     overflow-x: hidden;
 
+
     background-image: url("/images/sobre_fundo.svg");
-    background-size: cover;
-    background-position: center top;
+    background-size: 100% auto;
+    background-position: top center;
     background-repeat: no-repeat;
+    background-color: #F8F6F2;
 }
 .header {
     width: 100vw;
@@ -269,11 +271,13 @@ h1{
   position: relative;
   width: 45%;
   margin-left: 6%;
-  margin-top: 3%;
+  margin-top: 1.8%;
 }
 
 .hero-texto p{
-  font-size: 22px;
-  margin: 2%;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 0;
   
-}
+} 
