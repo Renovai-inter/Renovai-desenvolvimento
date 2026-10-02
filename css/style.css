@@ -997,3 +997,335 @@ button {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.7);
 }
+
+.solucoes-hero {
+  position: relative;
+  min-height: 720px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 100px 6% 60px;
+  overflow: hidden;
+  background-color: #EBF0E1;
+}
+
+.solucoes-fundo-logo {
+  position: absolute;
+  left: 60px;
+  width: 1475px;
+  bottom: -20px;
+  font-size: 90px;
+  font-weight: 900;
+  z-index: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.solucoes-hero-images {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  width: 45%;
+}
+
+.solucoes-celular-laptop {
+  width: 740px;
+  position: absolute;
+  bottom: -30px;
+  left: -20px;
+  z-index: 3;
+}
+
+.solucoes-folhas {
+  position: absolute;
+  top: -60px;
+  left: -200px;
+  width: 860px;
+  z-index: 1;
+  transform: scaleX(-1);
+}
+
+.solucoes-texto {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.solucoes-titulo {
+    font-size: 40px;
+    font-weight: 800;
+    color: #882B4E;
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.solucoes-titulo .destaque-verde {
+  color: #456749;
+}
+
+.solucoes-descricao {
+  font-size: 16px;
+  color: #2E2E2E;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.solucoes-descricao .mais-futuro-negrito {
+  color: #882B4E;
+}
+
+.sobreNos {
+  color: #519058;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #519058;
+}
+
+.solucoes-mascote {
+  position: absolute;
+  bottom: 20px;
+  right: 6%;
+  width: 90px;
+  z-index: 2;
+}
+
+.funciona {
+  padding: 60px 6% 100px;
+  text-align: center;
+}
+
+.funciona-titulo {
+  font-size: 38px;
+  font-weight: 700;
+  color: #456749;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.funciona-logo {
+  height: 56px;
+}
+
+.funciona-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.funciona-linha {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-left: 3.5px solid #456749;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.funciona-linha-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 140px;
+  margin-bottom: 20px;
+}
+
+.funciona-conteudo {
+  width: calc(50% - 50px);
+  text-align: left;
+  background: #FAF9F6;
+  border-radius: 20px;
+  padding: 22px 26px;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
+}
+
+.funciona-esquerda {
+  margin-right: auto;
+}
+.funciona-direita {
+  margin-left: auto;
+}
+
+.funciona-badge {
+  display: inline-block;
+  background: #E0E3CE;
+  color: #334B36;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.funciona-badge2 {
+  display: inline-block;
+  background:rgba(136, 43, 78, 0.17);
+  color: #882B4E;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.funciona-esquerda h3 {
+  font-size: 18px;
+  color: #456749;
+  margin-bottom: 6px;
+}
+
+.funciona-direita h3 {
+  font-size: 18px;
+  color: #882B4E;
+  margin-bottom: 6px;
+}
+
+.funciona-esquerda p {
+  font-size: 14px;
+  color: #243927;
+}
+
+.funciona-direita p {
+  font-size: 14px;
+  color: #582136;
+}
+
+.funciona-icone-central {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  background: #F8F6F2;
+  border: 2px solid rgba(69, 103, 73, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.images-funciona-item {
+  width: 32px;
+  height: 32px;
+}
+
+.funciona-numero {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 190px;
+  font-weight: 900;
+  z-index: 3;
+}
+
+.funciona-numero-direita {
+  font-family: "Pridi";
+  color: #D5E8C5;
+  opacity: 0.65;
+  left: -90px; 
+  top: 90px; 
+}
+
+.funciona-numero-esquerda {
+  right: -60px;
+  font-family: "Pridi";
+  color: rgba(181, 53, 102, 0.24);
+  top: 85px;
+}
+
+.funcionalidades {
+  padding: 60px 6% 40px;
+  text-align: center;
+}
+
+.funcionalidades-titulo {
+  font-size: 38px;
+  font-weight: 800;
+  color: #456749;
+  margin-bottom: 10px;
+}
+
+.funcionalidades-subtitulo {
+  font-size: 16px;
+  color: #863856;
+  font-weight: 550;
+  margin-bottom: 30px;
+}
+
+.funcionalidades-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 60px;
+}
+
+.tab-cooperativa,
+.tab-recicladora {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 37px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: opacity 0.2s ease;
+  width: 300px;
+}
+
+.tab-cooperativa img,
+.tab-recicladora img {
+  width: 40px;
+  height: 40px;
+}
+
+.tab-cooperativa {
+  background-color: #519058;
+  color: #FFFFFF;
+}
+
+.tab-recicladora {
+  background-color: #B53566;
+  color: #FFFFFF;
+}
+
+.bloco-funcionalidade {
+  max-width: 1100px;
+  margin: 0 auto 70px;
+  text-align: left;
+}
+
+.funcionalidade-badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.badge-verde {
+  background-color: #EBF0E1;
+  color: #375C2B;
+}
+
+.badge-rosa {
+  background-color: #F6E7E9;
+  color: #882B4E; 
+}
+
+.funcionalidade-heading {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.heading-verde {
+  
+}
