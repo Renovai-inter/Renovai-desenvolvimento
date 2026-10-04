@@ -199,57 +199,78 @@
     <img src="./images/folha2-section_planos.svg" alt="" class="section4-3">
 
     <div class="div_planos">
-        <h2 class="planos_titulo">Planos</h2>
+
+        <!-- Seletor único -->
         <div class="coop_reci">
             <div class="planosReciCoop">
-            <button class="cooper">
-                <img src="./images/Groups.svg" alt="" class="coop">
-                Cooperativa
-            </button>
-            <button class="recicl">
-                <img src="./images/fabrica_botao.svg" alt="" class="recic">
-                Recicladora
-            </button>
+                <button class="cooper active" data-plano-tipo="cooperativa">
+                    <img src="/images/Groups.svg" alt="" class="coop"> Cooperativa
+                </button>
+                <button class="recicl" data-plano-tipo="recicladora">
+                    <img src="/images/fabrica_botao.svg" alt="" class="recic"> Recicladora
+                </button>
             </div>
         </div>
-            <div class="card_planos">
-                <div class="card_cooperativa">
 
-                    <p class="tipo_plano">Plano X</p>
-
-                    <p class="subtitulo-plano">Lorem ipsum dolor sit</p>
-
-                    <h3 class="preco">R$XX.XX <span class="mes">/mês</span></h3>
-
-                    <div class="beneficios-plano">
-                        <p><span>✓</span> Benefício x</p>
-                        <p><span>✓</span> Benefício x</p><p><span>✓</span> Benefício x</p>         
-    
-                    </div>
-
-                    <button class="btn-escolher">
-                        Escolher
-                    </button>
+        <!-- Painel Cooperativa: texto + plano gratuito -->
+        <div class="planos-painel ativo" id="painel-cooperativa">
+            <div class="planos-destaque-conteudo">
+                <div class="planos-destaque-texto">
+                    <h2 class="planos-destaque-titulo">Fortaleça sua cooperativa <br><span class="planos-destaque-titulo1">sem custos</span>
+                    </h2>
+                    <p class="planos-destaque-descricao">
+                        O Renovaí é gratuito para cooperativas porque acreditamos que a tecnologia deve apoiar quem move a reciclagem. Organize sua operação, conecte-se com empresas e venda com mais facilidade.
+                    </p>
                 </div>
 
-                <div class="card_recicladora">
-                    <p class="tipo_plano">Plano Y</p>
-
-                    <p class="subtitulo-plano">Lorem ipsum dolor sit</p>
-
-                    <h3 class="preco">R$XX.XX <span class="mes">/mês</span></h3>
-
-                    <div class="beneficios-plano">
-                        <p><span>✓</span> Benefício x</p><p><span>✓</span> Benefício x</p><p><span>✓</span> Benefício x</p><p><span>✓</span> Benefício x</p><p><span>✓</span> Benefício x</p><p><span>✓</span> Benefício x</p>
-                    </div>
-
-                    <button class="btn-escolher">
-                        Escolher
-                    </button>
+                <div class="plano-card plano-card-gratuito">
+                    <span class="plano-card-badge">Cooperativas</span>
+                    <h3 class="plano-card-preco-grande">GRATUITO</h3>
+                    <ul class="plano-card-lista">
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                    </ul>
+                    <button class="plano-card-btn btn-fill-maroon">Cadastre sua cooperativa</button>
                 </div>
-
             </div>
+        </div>
 
+        <!-- Painel Recicladora: texto + planos pagos -->
+        <div class="planos-painel" id="painel-recicladora">
+
+            <div class="planos-pagos-cards">
+                <div class="plano-card plano-card-essencial">
+                    <h3>Essencial</h3>
+                    <ul class="plano-card-lista">
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                    </ul>
+                    <p class="plano-preco">R$49,00<span>/mês</span></p>
+                    <button class="plano-card-btn btn-fill-maroon">Assinar Agora</button>
+                </div>
+
+                <div class="plano-card plano-card-pro">
+                    <h3>RenovaPRO</h3>
+                    <ul class="plano-card-lista">
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                        <li>✓ Gestão de materiais</li>
+                    </ul>
+                    <p class="plano-preco">R$149,00<span>/mês</span></p>
+                    <button class="plano-card-btn btn-fill-white">Assinar Agora</button>
+                </div>
+            </div>
+        </div>
 
     </div>
 </section>
@@ -344,6 +365,6 @@
     <p class="footer-copy">© 2026 Renovaí. Todos os direitos reservados
     </p>
     </footer>
-    <script src="/./scripts/main.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
 </body>
 </html>
