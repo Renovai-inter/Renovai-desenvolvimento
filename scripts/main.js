@@ -69,4 +69,24 @@ if (iconeTrilha) {
     cardLista.innerHTML = feature.list.map((item) => `<li><span>✓</span> ${item}</li>`).join('');
   });
 }
+// Tabs Funcionalidades (rolagem + estado ativo)
+document.querySelectorAll('.tab-cooperativa, .tab-recicladora').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-cooperativa, .tab-recicladora').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    const alvo = document.getElementById(btn.dataset.target);
+    if (alvo) alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// Setas do carrossel
+document.querySelectorAll('.carrossel-seta').forEach((seta) => {
+  seta.addEventListener('click', () => {
+    const trilho = document.getElementById(seta.dataset.carrossel);
+    if (!trilho) return;
+    const larguraCard = trilho.querySelector('.funcionalidade-card')?.offsetWidth || 280;
+    const distancia = larguraCard + 24; // largura do card + gap
+    trilho.scrollBy({ left: seta.classList.contains('seta-direita') ? distancia : -distancia, behavior: 'smooth' });
+  });
+});
 });
