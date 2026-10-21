@@ -160,7 +160,10 @@ function inicializarCarrosselInfinito(containerId) {
 
   const larguraConjunto = cardsOriginais.reduce((acc, card) => acc + card.offsetWidth + gap, 0);
 
+  // posiciona no conjunto do meio sem animar (senão o carrossel abre "deslizando")
+  container.style.scrollBehavior = 'auto';
   container.scrollLeft = larguraConjunto;
+  container.style.scrollBehavior = '';
 
   let ajustando = false;
   container.addEventListener('scroll', () => {

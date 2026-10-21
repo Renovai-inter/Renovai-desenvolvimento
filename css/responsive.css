@@ -1015,3 +1015,557 @@ a {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* =========================================
+   PÁGINAS INTERNAS: RENOVAÍ E QUEM SOMOS
+========================================= */
+
+@media (max-width: 1200px) {
+    .solucoes-celular-laptop {
+        width: min(640px, 55vw);
+    }
+
+    .solucoes-folhas {
+        width: min(760px, 65vw);
+        left: -120px;
+    }
+
+    .solucoes-fundo-logo {
+        width: 1100px;
+    }
+
+    .caminho-passo {
+        min-width: 0;
+        flex: 1 1 100%;
+    }
+
+    .caminho-ilustracao,
+    .caminho-ilustracao-verde {
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+    }
+
+    .caminho-passo-verde,
+    .caminho-passo-rosa {
+        width: fit-content;
+        padding: 4px 22px;
+    }
+
+    .simbolo-ods {
+        left: 10%;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Soluções (hero da página Renovaí) */
+    .solucoes-hero {
+        flex-direction: column;
+        min-height: auto;
+        padding: 40px 6% 60px;
+        gap: 24px;
+        text-align: center;
+    }
+
+    .solucoes-texto {
+        order: 1;
+    }
+
+    .solucoes-hero-images {
+        order: 2;
+        width: 100%;
+        max-width: 520px;
+        aspect-ratio: 4 / 3;
+    }
+
+    .solucoes-celular-laptop {
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+
+    .solucoes-folhas {
+        width: 120%;
+        left: -10%;
+        top: -20px;
+    }
+
+    .solucoes-fundo-logo {
+        width: 800px;
+        left: -40px;
+    }
+
+    .solucoes-titulo {
+        font-size: clamp(28px, 5.5vw, 38px);
+    }
+
+    .solucoes-mascote {
+        width: 64px;
+    }
+
+    /* Como funciona */
+    .funciona-titulo {
+        font-size: clamp(26px, 5vw, 34px);
+        flex-wrap: wrap;
+    }
+
+    .funciona-logo {
+        height: 42px;
+    }
+
+    .funciona-numero {
+        font-size: 120px;
+    }
+
+    .funciona-numero-direita {
+        left: -20px;
+    }
+
+    .funciona-numero-esquerda {
+        right: -10px;
+    }
+
+    /* Funcionalidades */
+    .funcionalidades-tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab-cooperativa,
+    .tab-recicladora {
+        width: min(300px, 100%);
+    }
+
+    .carrossel-seta {
+        width: 48px;
+        height: 48px;
+    }
+
+    .carrossel-seta img {
+        width: 20px;
+    }
+
+    /* FAQ */
+    .faq {
+        padding: 40px 5% 70px;
+    }
+
+    /* Quem somos */
+    .pesquisa-titulo {
+        font-size: clamp(28px, 6vw, 38px);
+    }
+
+    .pesquisa-mascote {
+        right: 16px;
+        width: 72px;
+        height: 72px;
+    }
+
+    .pesquisa-mascote img {
+        width: 62px;
+    }
+
+    .caminho-passos {
+        gap: 40px;
+    }
+
+    .caminho-passo-3-topo {
+        margin-left: 0;
+    }
+
+    .caminho-feature-verde h4,
+    .caminho-feature-rosa h4 {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        padding: 2px 8px;
+    }
+
+    .caminho-passo-3-celular img {
+        width: min(220px, 60%);
+    }
+
+    .simbolo-ods {
+        left: 0;
+        width: 100%;
+        opacity: 0.5;
+    }
+
+    .ods12-grid {
+        gap: 20px;
+    }
+
+    .equipe-cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .valores-grid {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px 24px;
+        gap: 20px;
+    }
+
+    .valores-letras {
+        flex-direction: row;
+        gap: 12px;
+        line-height: 1;
+    }
+
+    .valores-letras span {
+        font-size: 64px;
+    }
+
+    .valores-pin {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    .solucoes-hero {
+        padding: 30px 5% 50px;
+    }
+
+    .solucoes-descricao {
+        font-size: 14px;
+    }
+
+    .solucoes-fundo-logo {
+        display: none;
+    }
+
+    /* Timeline vira coluna única, linha à esquerda */
+    .funciona {
+        padding: 40px 5% 60px;
+    }
+
+    .funciona-linha {
+        left: 28px;
+    }
+
+    .funciona-linha-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 70px;
+        min-height: 0;
+        margin-bottom: 24px;
+    }
+
+    .funciona-conteudo {
+        width: 100%;
+        margin: 0;
+    }
+
+    .funciona-icone-central {
+        left: 28px;
+        top: 40px;
+        width: 46px;
+        height: 46px;
+    }
+
+    .funciona-numero {
+        display: none;
+    }
+
+    /* Funcionalidades */
+    .funcionalidades {
+        padding: 40px 5% 30px;
+    }
+
+    .funcionalidades-titulo {
+        font-size: 30px;
+    }
+
+    .funcionalidade-heading {
+        font-size: 21px;
+    }
+
+    .carrossel {
+        gap: 6px;
+    }
+
+    .carrossel-seta {
+        width: 36px;
+        height: 36px;
+    }
+
+    .funcionalidade-card {
+        flex-basis: 85%;
+        min-width: 0;
+        padding: 20px;
+    }
+
+    .funcionalidade-ilustracao {
+        height: 190px;
+    }
+
+    .faq-titulo {
+        font-size: 26px;
+    }
+
+    .faq-pergunta {
+        padding: 16px 18px;
+        font-size: 14px;
+        gap: 12px;
+    }
+
+    /* Quem somos */
+    .pesquisa-hero,
+    .porque-importa,
+    .caminho,
+    .ods12,
+    .equipe,
+    .valores {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .importa-titulo {
+        font-size: 25px;
+    }
+
+    .importa-numero {
+        font-size: 36px;
+        flex-wrap: wrap;
+    }
+
+    .caminho-titulo,
+    .ods12-titulo,
+    .equipe-titulo {
+        font-size: 24px;
+    }
+
+    .caminho-titulo br,
+    .ods12-titulo br {
+        display: none;
+    }
+
+    .equipe-titulo {
+        flex-wrap: wrap;
+    }
+
+    .equipe-logo {
+        height: 26px;
+    }
+
+    .ods12-destaque {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .ods12-coluna {
+        min-width: 0;
+        padding: 20px;
+    }
+
+    .equipe-carrossel {
+        gap: 0;
+    }
+
+    .valores-grid {
+        padding: 24px 16px;
+        border-radius: 24px;
+    }
+
+    .valores-letras span {
+        font-size: 48px;
+    }
+
+    .valores-item h4 {
+        width: auto;
+        max-width: 100%;
+    }
+}
+
+/* =========================================
+   INDEX: RODA DE BENEFÍCIOS EM TELAS MÉDIAS
+   O deslocamento fixo de -180px só funciona com o container de 1100px
+   centralizado (telas largas). Abaixo disso a roda encosta na borda
+   esquerda da tela e o card ocupa o restante.
+========================================= */
+
+@media (min-width: 601px) and (max-width: 1360px) {
+    .beneficios-conteudo {
+        max-width: none;
+        padding: 0 4% 0 0;
+        gap: 24px;
+    }
+
+    .icone-trilha {
+        transform: none;
+    }
+
+    .card-beneficio {
+        max-width: none;
+    }
+}
+
+/* =========================================
+   INDEX: HERO EM TABLET/CELULAR
+   O celular passa a ocupar espaço no fluxo, assim a área das imagens
+   cresce com ele e não invade a seção seguinte.
+========================================= */
+
+@media (max-width: 900px) {
+    .images-hero {
+        display: flex;
+        justify-content: center;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    .hero-celular {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: min(62%, 280px);
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .hero-botoes {
+        width: 100%;
+    }
+
+    .conhecaRenovai,
+    .sobreNos {
+        box-sizing: border-box;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .sobreNos img {
+        width: 18px;
+        height: auto;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-celular {
+        width: min(66%, 250px);
+    }
+}
+
+/* =========================================
+   INDEX: CORREÇÕES DE SOBREPOSIÇÃO (TABLET/CELULAR)
+========================================= */
+
+@media (max-width: 1200px) {
+    /* Ícones centrais cobriam o texto dos dois cards */
+    .section3-2,
+    .section3-3 {
+        display: none;
+    }
+
+    /* Decorações ficam atrás dos cards, só aparecendo nas bordas */
+    .bloco_coop,
+    .bloco_recicladora {
+        z-index: 1;
+    }
+
+    .section3-1,
+    .section3-4 {
+        z-index: 0;
+        max-width: 160px;
+    }
+
+    .section3-1 {
+        top: auto;
+        bottom: 0;
+        left: -30px;
+    }
+
+    .section3-4 {
+        top: auto;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .planos {
+        min-height: 0;
+    }
+
+    .beneficios_coop_reci {
+        min-height: 0;
+    }
+
+    /* CTA final: o celular não pode descer sobre o texto */
+    .experimente-img {
+        margin: 0 auto;
+    }
+
+    .experimente-celular {
+        top: 0;
+        left: 0;
+    }
+
+    .experimente-folhas {
+        left: 0;
+        bottom: -20px;
+        width: 60%;
+    }
+
+    .experimente-card {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Em coluna, flex: 0 0 240px virava altura; a roda precisa dos 500px */
+    .icone-trilha {
+        flex: 0 0 auto;
+        width: 240px;
+        height: 500px;
+    }
+
+    /* Rótulos Cooperativa/Recicladora entram no fluxo, acima do título */
+    .ctacoop,
+    .ctareci {
+        position: static;
+        display: block;
+        width: auto;
+        min-width: 140px;
+        height: 32px;
+        margin: 24px 0 0 22px;
+        padding: 0 20px;
+    }
+
+    .primeira_linha_coop,
+    .primeira_linha_reci {
+        margin-top: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-mascote {
+        right: 16px;
+        bottom: 16px;
+        width: 64px;
+        height: 64px;
+    }
+
+    .hero-mascote img {
+        width: 54px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-mascote,
+    .pesquisa-mascote,
+    .solucoes-mascote {
+        right: 16px;
+        bottom: 16px;
+        width: 64px;
+        height: 64px;
+    }
+
+    .hero-mascote img,
+    .pesquisa-mascote img {
+        width: 54px;
+    }
+}

@@ -2578,3 +2578,257 @@ html {
 .admin {
   background-color: #882B4E;
 }
+/* ===== Ajustes de fidelidade ao mockup ===== */
+.planos_titulo {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.faq {
+  max-width: none;
+  background-color: #EBF0E1;
+  padding: 60px 6% 90px;
+}
+
+.faq-lista {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pesquisa-hero {
+  text-align: left;
+  padding-top: 90px;
+}
+
+.pesquisa-titulo {
+  font-size: 44px;
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+/* ===== Planos da Recicladora (layout do mockup) ===== */
+.planos-pagos-cards {
+  align-items: flex-start;
+  gap: 36px;
+}
+
+.planos-pagos-cards .plano-card {
+  width: 300px;
+  padding: 26px 22px 28px;
+  border: 3px solid transparent;
+  border-radius: 26px;
+  background: #E9F1E0;
+  color: #882B4E;
+  box-shadow: 0 18px 30px -18px rgba(69, 103, 73, 0.45);
+}
+
+.planos-pagos-cards .plano-card-essencial {
+  margin-top: 44px;
+}
+
+.planos-pagos-cards .plano-card-pro {
+  width: 330px;
+  border-color: #B53566;
+  box-shadow: 0 22px 36px -18px rgba(136, 43, 78, 0.45);
+}
+
+.planos-pagos-cards .plano-card h3 {
+  margin-bottom: 2px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #882B4E;
+}
+
+.plano-card-sub {
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #6D8A6F;
+}
+
+.planos-pagos-cards .plano-preco {
+  margin-bottom: 14px;
+  font-size: 40px;
+  font-weight: 800;
+  color: #882B4E;
+}
+
+.planos-pagos-cards .plano-preco span {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.planos-pagos-cards .plano-card-lista {
+  margin-bottom: 22px;
+  padding: 10px 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.planos-pagos-cards .plano-card-lista li {
+  padding: 6px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #456749;
+}
+
+.planos-pagos-cards .plano-card-btn {
+  display: block;
+  width: auto;
+  margin: 0 auto;
+  padding: 10px 44px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(#882B4E, #B53566);
+}
+
+/* ===== Posição das imagens: seção "Por que escolher" ===== */
+.hero-frase {
+  margin-bottom: 24px;
+}
+
+/* Só decoração: não ocupa espaço, a roda sobe logo abaixo do título */
+.retangulos {
+  height: 0;
+  min-height: 0;
+}
+
+.retangulos img {
+  pointer-events: none;
+}
+
+.card-beneficio {
+  margin-top: 90px;
+}
+
+/* Mascote no canto do hero (como no mockup) */
+.hero-mascote {
+  position: absolute;
+  right: 5%;
+  bottom: 150px;
+  z-index: 6;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6EDEE;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hero-mascote img {
+  width: 76px;
+}
+
+/* Mascote fixo em todas as páginas (início, Renovaí e Quem somos) */
+.hero-mascote,
+.pesquisa-mascote,
+.solucoes-mascote {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  top: auto;
+  left: auto;
+  z-index: 900;
+  width: 90px;
+  height: 90px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6EDEE;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hero-mascote img,
+.pesquisa-mascote img {
+  width: 76px;
+}
+
+/* Na página Renovaí o mascote é a própria <img> */
+img.solucoes-mascote {
+  padding: 7px;
+  object-fit: contain;
+}
+
+/* Ícones do seletor de planos: cor acompanha o estado do botão */
+.cooper:not(.active) img {
+  /* branco -> verde #519058 */
+  filter: brightness(0) saturate(100%) invert(51%) sepia(18%) saturate(1245%) hue-rotate(79deg) brightness(92%) contrast(86%);
+}
+
+.recicl.active img {
+  /* vinho -> branco */
+  filter: brightness(0) invert(1);
+}
+
+/* ===== "A solução": folha + linha funcionam como borda do card =====
+   Ficam do lado de fora, encostadas na borda: à esquerda nos cards da
+   esquerda e à direita nos cards da direita (imagens espelhadas). */
+.caminho-feature {
+  position: relative;
+  min-height: 170px;
+  padding: 22px 26px;
+  text-align: left;
+}
+
+.caminho-feature img {
+  position: absolute;
+  top: 0;
+  max-width: none;
+  pointer-events: none;
+}
+
+.caminho-feature .feat-folha {
+  width: 30px;
+  height: 30px;
+}
+
+/* a haste da folha rosa fica à direita da imagem; a linha nasce nela */
+.caminho-feature .feat-linha {
+  top: 33px;
+  width: 2px;
+  height: calc(100% - 41px);
+  object-fit: none;
+  object-position: top;
+}
+
+.caminho-feature .feat-folha-linha {
+  width: 30px;
+  height: 100%;
+  object-fit: none;
+  object-position: top left;
+}
+
+/* A folha sempre aponta para fora do card e a linha (haste) fica rente à borda.
+   esquerda: rosa já nasce com a haste à direita; verde (haste à esquerda) é espelhado */
+.caminho-feature-esq .feat-folha { left: -36px; }
+.caminho-feature-esq .feat-linha { left: -11px; }
+.caminho-feature-esq .feat-folha-linha { left: -36px; transform: scaleX(-1); }
+
+/* direita: rosa é espelhado (haste à esquerda); verde já nasce com a haste à esquerda */
+.caminho-feature-dir .feat-folha { right: -36px; transform: scaleX(-1); }
+.caminho-feature-dir .feat-linha { right: -11px; }
+.caminho-feature-dir .feat-folha-linha { right: -36px; }
+/* título como faixa na largura do card */
+.caminho-feature-verde h4,
+.caminho-feature-rosa h4 {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 14px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 18px;
+}
+/* Página Renovaí: o hero verde começa no topo, por trás da navbar fixa */
+@media (min-width: 901px) {
+  .solucoes-hero {
+    margin-top: -88px;
+    padding-top: 150px;
+    min-height: 700px;
+  }
+}
