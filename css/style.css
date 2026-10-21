@@ -2832,3 +2832,231 @@ img.solucoes-mascote {
     min-height: 700px;
   }
 }
+
+/* ===== Linha do tempo "Como o Renovaí funciona?" ===== */
+.funciona-timeline {
+  max-width: 980px;
+}
+
+/* linha central some suavemente nas pontas */
+.funciona-linha {
+  width: 3px;
+  border-left: 0;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, transparent, #456749 7%, #456749 93%, transparent);
+}
+
+.funciona-linha-item {
+  min-height: 150px;
+  margin-bottom: 26px;
+}
+
+/* cards acima dos números, com leve elevação ao passar o mouse */
+.funciona-conteudo {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.funciona-conteudo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px -16px rgba(0, 0, 0, 0.28);
+}
+
+/* conector entre o card e o ícone central */
+.funciona-conteudo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  height: 2px;
+  background: rgba(69, 103, 73, 0.45);
+}
+
+.funciona-esquerda::after {
+  right: -24px;
+}
+
+.funciona-direita::after {
+  left: -24px;
+  background: rgba(136, 43, 78, 0.4);
+}
+
+/* ícone central: anel e sombra na cor do lado do card */
+.funciona-icone-central {
+  width: 60px;
+  height: 60px;
+  border-width: 3px;
+  background: #FAF9F6;
+  box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.25);
+}
+
+.funciona-linha-item:has(.funciona-esquerda) .funciona-icone-central {
+  border-color: #456749;
+}
+
+.funciona-linha-item:has(.funciona-direita) .funciona-icone-central {
+  border-color: #B53566;
+}
+
+/* números ficam fora do card, atrás dele */
+.funciona-numero {
+  z-index: 0;
+  line-height: 1;
+}
+
+.funciona-numero-direita {
+  left: -50px;
+}
+
+.funciona-numero-esquerda {
+  right: -50px;
+}
+
+/* números totalmente fora dos cards (telas largas) */
+.funciona-numero-direita {
+  left: -120px;
+}
+
+.funciona-numero-esquerda {
+  right: -120px;
+}
+
+/* sem espaço fora do card, o número só atrapalharia */
+@media (max-width: 1250px) {
+  .funciona-numero {
+    display: none;
+  }
+}
+/* ===== Linha do tempo: animação de entrada conforme a rolagem ===== */
+@media (prefers-reduced-motion: no-preference) {
+  /* cards entram deslizando do próprio lado (a propriedade "translate" não
+     briga com o "transform" do efeito de hover) */
+  .funciona.com-js .funciona-conteudo {
+    opacity: 0;
+    translate: -48px 0;
+    transition: opacity 0.6s ease, translate 0.6s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .funciona.com-js .funciona-direita {
+    translate: 48px 0;
+  }
+
+  .funciona.com-js .funciona-icone-central {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+    transition: opacity 0.4s ease 0.15s, transform 0.5s cubic-bezier(0.3, 1.5, 0.5, 1) 0.15s;
+  }
+
+  .funciona.com-js .funciona-numero {
+    opacity: 0;
+    transition: opacity 0.8s ease 0.35s;
+  }
+
+  .funciona.com-js .funciona-linha-item.visivel .funciona-conteudo {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  .funciona.com-js .funciona-linha-item.visivel .funciona-icone-central {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .funciona.com-js .funciona-linha-item.visivel .funciona-numero-direita {
+    opacity: 0.65;
+  }
+
+  .funciona.com-js .funciona-linha-item.visivel .funciona-numero-esquerda {
+    opacity: 1;
+  }
+}
+
+/* ===== Animação de entrada (ao abrir a página) =====
+   Usa as propriedades "translate"/"scale", que não brigam com os "transform"
+   já usados no layout. "backwards" mantém cada item escondido durante o atraso. */
+@keyframes entrada-subir  { from { opacity: 0; translate: 0 32px; } }
+@keyframes entrada-descer { from { opacity: 0; translate: 0 -28px; } }
+@keyframes entrada-lado   { from { opacity: 0; translate: 70px 0; } }
+@keyframes entrada-fade   { from { opacity: 0; } }
+@keyframes entrada-pop    { from { opacity: 0; scale: 0.85; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .navbar {
+    animation: entrada-descer 0.7s ease-out backwards;
+  }
+
+  /* fundo do hero aparece primeiro, bem suave */
+  .hero-img-1, .hero-img-2, .hero-img-3, .hero-img-4, .hero-img-5,
+  .hero-fundo, .hero-predios {
+    animation: entrada-fade 1.2s ease-out backwards;
+  }
+
+  /* texto: título, parágrafo e botões em sequência */
+  .hero-texto .titulo1 { animation: entrada-subir 0.8s ease-out 0.15s backwards; }
+  .hero-texto p        { animation: entrada-subir 0.8s ease-out 0.35s backwards; }
+  .hero-botoes         { animation: entrada-subir 0.8s ease-out 0.55s backwards; }
+
+  /* celular entra pela direita, folhas e mascote surgem depois */
+  .hero-celular { animation: entrada-lado 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s backwards; }
+  .hero-folhas  { animation: entrada-fade 1s ease-out 0.9s backwards; }
+  .hero-mascote { animation: entrada-pop 0.6s cubic-bezier(0.3, 1.5, 0.5, 1) 1.2s backwards; }
+}
+
+/* ===== Entrada por rolagem (todas as páginas) =====
+   Usa animation (não transition) para não sobrescrever transições já existentes. */
+@media (prefers-reduced-motion: no-preference) {
+  html.rev-pronto .rev:not(.visivel) {
+    opacity: 0;
+  }
+
+  html.rev-pronto .rev.visivel {
+    animation: entrada-subir 0.7s ease-out var(--atraso, 0s) backwards;
+  }
+}
+
+/* ===== ODS 12: ícone e caixas de texto ===== */
+.ods12-titulo span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.ods12-icone {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.ods12-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.ods12-coluna {
+  padding: 26px 28px;
+  border: 1px solid rgba(69, 103, 73, 0.18);
+}
+
+.ods12-coluna p {
+  border-left: 3px solid #456749;
+  padding-left: 16px;
+}
+
+.ods12-destaque {
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(69, 103, 73, 0.18);
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .ods12-icone {
+    width: 48px;
+    height: 48px;
+  }
+
+  .ods12-coluna {
+    padding: 20px;
+  }
+}

@@ -7,11 +7,14 @@
     <link rel="shortcut icon" href="images/Nimo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/intro.css">
+    <script>(function(){var d=document.documentElement;try{if(sessionStorage.getItem("introVista")||matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.add("sem-intro");return}}catch(e){}d.classList.add("intro-rodando")})()</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="intro" aria-hidden="true"><svg id="introSvg"><defs><linearGradient id="introGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#882B4E"/><stop offset="1" stop-color="#B53566"/></linearGradient><mask id="introMascara" maskUnits="userSpaceOnUse"><rect id="introMascaraFundo" fill="#fff"/><circle id="introFuro" fill="#000" r="0"/></mask></defs><rect id="introFundo" fill="url(#introGrad)" mask="url(#introMascara)"/><g id="introPalco"><circle id="introAnel" fill="none" stroke="#F8F6F2"/><text id="introEsq" text-anchor="end">REN</text><text id="introDir" text-anchor="start">VAÍ</text></g></svg></div>
     <header class="header">
         <nav class="navbar" aria-label="Navegação Principal">
                 <img src="images/Frame 6.svg" alt="Logo Renovaí" id="logo">
@@ -354,22 +357,22 @@
             <p class="footer-titulo">Links Rápidos</p>
         </li>
         <li>
-            <a href="/index.html">
+            <a href="index.html">
                 Sobre
             </a>
         </li>
         <li>
-            <a href="/pages/renovai.html">
+            <a href="pages/renovai.html">
                 Renovaí
             </a>
         </li>
         <li>
-            <a href="/pages/quem_somos.html">
+            <a href="pages/quem_somos.html">
                 Quem Somos
             </a>
         </li>
         <li>
-            <a href="/index.html#planos">
+            <a href="index.html#planos">
                 Planos
             </a>
         </li>
@@ -386,6 +389,7 @@
     <p class="footer-copy">© 2026 Renovaí. Todos os direitos reservados
     </p>
     </footer>
+    <script src="scripts/intro.js" defer></script>
     <script src="scripts/main.js" defer></script>
 </body>
 </html>

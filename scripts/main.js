@@ -285,7 +285,7 @@ if (trilhoEquipe) {
           : `<div class="equipe-foto equipe-foto-vazia"></div>`}
         <h4>${m.nome}</h4>
         <p class="equipe-cargo">${m.cargo}</p>
-        <img src="/images/Leaf spark.svg" alt="" class="equipe-folha">
+        <img src="../images/Leaf spark.svg" alt="" class="equipe-folha">
       </article>`;
   }
 
@@ -609,6 +609,71 @@ fetch('http://localhost:8080/api/usuarios')
   .then(response => response.json())
   .then(data => console.log(data));
 
+
+  // ===== Linha do tempo (Renovaí): cada passo aparece ao entrar na tela =====
+  const secaoFunciona = document.querySelector('.funciona');
+  if (secaoFunciona && 'IntersectionObserver' in window) {
+    // O CSS só esconde os passos se esta classe existir, assim nada some se o script falhar
+    secaoFunciona.classList.add('com-js');
+
+    const observadorPassos = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (!entrada.isIntersecting) return;
+        entrada.target.classList.add('visivel');
+        observadorPassos.unobserve(entrada.target);
+      });
+    }, { threshold: 0.3, rootMargin: '0px 0px -8% 0px' });
+
+    secaoFunciona.querySelectorAll('.funciona-linha-item').forEach((passo) => observadorPassos.observe(passo));
+  }
+
+  // ===== Entrada por rolagem: todas as seções (exceto as que já têm animação própria) =====
+  if ('IntersectionObserver' in window) {
+    // hero do início anima ao carregar; linha do tempo e valores têm animação própria
+    const secoesProprias = '.hero, .funciona, .valores';
+    // só decoração, não faz sentido animar
+    const ignorar = ['retangulos', 'solucoes-fundo-logo'];
+    // grupos cujos itens entram em sequência (em vez do grupo inteiro de uma vez)
+    const gruposEscalonados = [
+      '.faq-lista', '.importa-grid', '.ods12-grid', '.planos-pagos-cards',
+      '.caminho-passos', '.caminho-passo-3-grid', '.beneficios_coop_reci'
+    ].join(', ');
+
+    const itens = [];
+    const marcar = (el, indice = 0) => {
+      el.classList.add('rev');
+      el.style.setProperty('--atraso', `${Math.min(indice, 5) * 90}ms`);
+      itens.push(el);
+    };
+
+    document.querySelectorAll('main > section').forEach((secao) => {
+      if (secao.matches(secoesProprias)) return;
+
+      Array.from(secao.children).forEach((filho) => {
+        if (filho.tagName === 'IMG' || ignorar.some((c) => filho.classList.contains(c))) return;
+
+        if (filho.matches(gruposEscalonados)) {
+          Array.from(filho.children)
+            .filter((neto) => neto.tagName !== 'IMG')
+            .forEach((neto, i) => marcar(neto, i));
+        } else {
+          marcar(filho);
+        }
+      });
+    });
+
+    const observadorRev = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (!entrada.isIntersecting) return;
+        entrada.target.classList.add('visivel');
+        observadorRev.unobserve(entrada.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    // O CSS só esconde os itens depois desta classe, assim nada some se o script falhar
+    document.documentElement.classList.add('rev-pronto');
+    itens.forEach((el) => observadorRev.observe(el));
+  }
 
   // Acesso discreto à área administrativa
   const logoAdmin = document.getElementById('logo');

@@ -1569,3 +1569,30 @@ a {
         width: 54px;
     }
 }
+
+@media (max-width: 600px) {
+    .funciona-conteudo::after {
+        display: none;
+    }
+
+    .funciona-conteudo:hover {
+        transform: none;
+    }
+
+    .funciona-icone-central {
+        width: 46px;
+        height: 46px;
+    }
+
+    .funciona-linha {
+        width: 2px;
+    }
+}
+
+/* Quem somos: cartões vazios do mosaico só fazem sentido na grade de 3 colunas */
+@media (max-width: 900px) {
+    .importa-blank1,
+    .importa-blank2 {
+        display: none;
+    }
+}
