@@ -67,3 +67,21 @@ html.intro-rodando {
 html.intro-rodando :not(#intro):not(#intro *) {
   animation-play-state: paused !important;
 }
+
+/* folhinhas ao redor do RENOVAÍ: surgem em sequência e depois ficam flutuando */
+.intro-folha {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation:
+    intro-folha-surge 0.7s cubic-bezier(0.2, 1.5, 0.4, 1) var(--atraso) backwards,
+    intro-folha-flutua var(--duracao) ease-in-out calc(var(--atraso) + 0.7s) infinite alternate;
+}
+
+@keyframes intro-folha-surge {
+  from { opacity: 0; transform: scale(0) rotate(-90deg); }
+}
+
+@keyframes intro-folha-flutua {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to { transform: translate(var(--dx), var(--dy)) rotate(var(--giro)); }
+}
