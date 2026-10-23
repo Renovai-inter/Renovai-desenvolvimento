@@ -76,7 +76,42 @@
   esq.setAttribute('x', cx - raioExterno - folga);
   dir.setAttribute('x', cx + raioExterno + folga);
 
-  const suavizar = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
+  // folhinhas em volta da palavra, dentro do palco (crescem junto no mergulho)
+  const NS = 'http://www.w3.org/2000/svg';
+  const cores = ['#8FCB8F', '#5FA66B', '#F8F6F2', '#B8E0A8'];
+  const totalFolhas = 16;
+  for (let i = 0; i < totalFolhas; i++) {
+    const ang = (i / totalFolhas) * Math.PI * 2 + (i % 2 ? 0.12 : -0.12);
+    const alcance = 1 + (i % 3) * 0.08;
+    const tam = f * (0.2 + (i % 4) * 0.05);
+    const x = cx + Math.cos(ang) * f * 3.3 * alcance;
+    const y = cy + Math.sin(ang) * f * 0.95 * alcance;
+
+    const g = document.createElementNS(NS, 'g');
+    g.setAttribute('transform', `translate(${x} ${y}) rotate(${(ang * 180) / Math.PI + 90 + (i % 2 ? 25 : -25)}) scale(${tam})`);
+    const folha = document.createElementNS(NS, 'g');
+    folha.setAttribute('class', 'intro-folha');
+    folha.style.setProperty('--atraso', `${0.9 + i * 0.07}s`);
+    folha.style.setProperty('--duracao', `${1.6 + (i % 5) * 0.35}s`);
+    folha.style.setProperty('--dx', `${((i % 3) - 1) * 0.5}px`);
+    folha.style.setProperty('--dy', `${(i % 2 ? -1 : 1) * 0.4}px`);
+    folha.style.setProperty('--giro', `${(i % 2 ? 1 : -1) * (14 + (i % 4) * 4)}deg`);
+
+    const forma = document.createElementNS(NS, 'path');
+    forma.setAttribute('d', 'M0 -1 C0.85 -0.45 0.85 0.45 0 1 C-0.85 0.45 -0.85 -0.45 0 -1Z');
+    forma.setAttribute('fill', cores[i % cores.length]);
+    const nervura = document.createElementNS(NS, 'path');
+    nervura.setAttribute('d', 'M0 -0.7 L0 1.25');
+    nervura.setAttribute('stroke', '#882B4E');
+    nervura.setAttribute('stroke-opacity', '0.55');
+    nervura.setAttribute('stroke-width', '0.08');
+    nervura.setAttribute('stroke-linecap', 'round');
+    folha.append(forma, nervura);
+    g.append(folha);
+    palco.insertBefore(g, anel);
+  }
+
+  const suavizar =(p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
 
   function mergulhar() {
     if (terminou) return;

@@ -218,6 +218,52 @@ document.querySelectorAll('.tab-cooperativa, .tab-recicladora').forEach((btn) =>
 document.getElementById('bloco-cooperativa')?.classList.add('ativo');
 inicializarCarrosselInfinito('carrossel-coop');
 
+  // FAQ: sorteia 5 perguntas do banco a cada visita (edite aqui)
+  const listaFaq = document.querySelector('.faq-lista');
+
+  if (listaFaq) {
+    const QTD_FAQ = 5;
+    const bancoFaq = [
+      { p: 'O que é o Renovaí?', r: 'O Renovaí é uma plataforma que conecta cooperativas e recicladoras de ponta a ponta, da busca pelo material até o fechamento do acordo. Ele também ajuda as cooperativas a organizar sua operação em um só lugar.' },
+      { p: 'Como funciona a negociação?', r: 'A cooperativa cadastra o que tem disponível, a recicladora encontra o material e envia uma proposta com o valor por quilo. Tudo fica na plataforma: proposta, contraproposta, aceite e acordo, sem a negociação espalhada entre diferentes canais.' },
+      { p: 'Quanto custa para cooperativas?', r: 'Nada! O Renovaí é gratuito para cooperativas, porque acreditamos que a tecnologia deve apoiar quem move a reciclagem.' },
+      { p: 'Quanto custa para recicladoras?', r: 'Existem dois planos: o Essencial, por R$49,00/mês, para quem está começando a comprar, e o RenovaPRO, por R$149,00/mês, para quem compra em escala.' },
+      { p: 'Como faço meu cadastro?', r: 'É só clicar em "Começar agora" no topo da página, ou escolher "Sou cooperativa" ou "Sou recicladora" e preencher o cadastro.' },
+      { p: 'O pagamento e a retirada passam pela plataforma?', r: 'Não. O Renovaí conecta as partes e organiza a negociação. A retirada e o pagamento são combinados diretamente entre cooperativa e recicladora, depois do acordo fechado.' },
+      { p: 'Qual o objetivo do projeto?', r: 'Apoiar o ODS 12 da ONU (Consumo e Produção Responsáveis), em especial a meta 12.5, que propõe reduzir a geração de resíduos por meio da prevenção, reciclagem e reuso.' },
+      { p: 'Como entro em contato?', r: 'Pelo e-mail renovai.institutojef@gmail.com ou pelo Instagram @renovai.app.' },
+      { p: 'Preciso pagar para usar como cooperativa?', r: 'Não. Todas as ferramentas para cooperativas, como gestão de cooperados, coletas, materiais disponíveis e relatórios, são gratuitas.' },
+      { p: 'O que a recicladora consegue fazer na plataforma?', r: 'Buscar cooperativas por material, cidade ou quantidade, ver tudo em um mapa interativo, enviar propostas diretas, acompanhar negociações e receber alertas quando surgir um material de interesse.' },
+      { p: 'Como a cooperativa mostra o que tem disponível?', r: 'Na área de materiais disponíveis, a cooperativa divulga o que está pronto para negociar. Não é controle de estoque: é uma vitrine simples para as recicladoras encontrarem você.' },
+      { p: 'A plataforma ajuda a controlar as coletas?', r: 'Sim. Você registra coletas externas ou entregas recebidas, cadastra rotas fixas e acompanha a equipe em tempo real no mapa.' },
+      { p: 'Como é feito o rateio entre os cooperados?', r: 'Ao registrar uma venda, manualmente ou direto de uma negociação aceita, o sistema calcula automaticamente o rateio entre os cooperados.' },
+      { p: 'Dá para gerar relatórios?', r: 'Dá. Vendas, financeiro, coletas, negociações e impacto ambiental ficam prontos para consultar ou exportar em PDF, sempre que for preciso prestar contas.' },
+      { p: 'Posso recusar ou fazer uma contraproposta?', r: 'Pode. Cada proposta recebida pode ser aceita, recusada ou respondida com uma contraproposta, e o histórico fica registrado.' },
+      { p: 'Qual a diferença entre os planos das recicladoras?', r: 'O Essencial (R$49,00/mês) é para quem está começando a comprar. O RenovaPRO (R$149,00/mês) é para quem compra em escala e precisa de mais recursos.' },
+      { p: 'Por que o projeto existe?', r: 'No Brasil são produzidos cerca de 80 milhões de toneladas de resíduos por ano e apenas 8% são reciclados. O problema não é falta de consciência, e sim de conexão entre quem coleta e quem recicla.' },
+      { p: 'Quem desenvolveu o Renovaí?', r: 'Uma equipe de estudantes do 1º e do 2º ano, que uniu design, dados e desenvolvimento. Conheça todo mundo na página Quem Somos.' }
+    ];
+
+    // embaralhamento de Fisher-Yates
+    for (let i = bancoFaq.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [bancoFaq[i], bancoFaq[j]] = [bancoFaq[j], bancoFaq[i]];
+    }
+
+    const escaparHtml = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    listaFaq.innerHTML = bancoFaq.slice(0, QTD_FAQ).map((item) => `
+        <div class="faq-item">
+            <button class="faq-pergunta">
+                ${escaparHtml(item.p)}
+                <span class="faq-icone">+</span>
+            </button>
+            <div class="faq-resposta">
+                <p>${escaparHtml(item.r)}</p>
+            </div>
+        </div>`).join('');
+  }
+
   // Acordeão do FAQ
   document.querySelectorAll('.faq-item').forEach((item) => {
     const pergunta = item.querySelector('.faq-pergunta');
@@ -244,17 +290,19 @@ if (trilhoEquipe) {
   // Edite aqui os membros de cada ano
   const equipe = {
     1: [
-      { nome: 'Nome Sobrenome', cargo: 'UX/UI Design', foto: '' },
-      { nome: 'Nome Sobrenome', cargo: 'UX/UI Design', foto: '' },
-      { nome: 'Nome Sobrenome', cargo: 'UX/UI Design', foto: '' },
-      { nome: 'Nome Sobrenome', cargo: 'Front End', foto: '' },
-      { nome: 'Nome Sobrenome', cargo: 'Back End', foto: '' }
+      { nome: 'Davi Sobral', cargo: 'Full Stack', foto: '' },
+      { nome: 'Joel Gracek', cargo: 'Back End', foto: '' },
+      { nome: 'Luiza Caravaggio', cargo: 'Back End', foto: '' },
+      { nome: 'Lukas Theodoro', cargo: 'Dados & Back End', foto: '' },
+      { nome: 'Paola Pietropoli', cargo: 'UX/UI Design', foto: '' }
     ],
     2: [
-      { nome: 'Nome Sobrenome', cargo: 'Front End', foto: '' },
-      { nome: 'Nome Sobrenome', cargo: 'Back End', foto: '' },
-      { nome: 'Nome Sobrenome', cargo: 'Banco de Dados', foto: '' },
-      { nome: 'Nome Sobrenome', cargo: 'UX/UI Design', foto: '' }
+      { nome: 'Caio França', cargo: 'Dados & Front End', foto: '' },
+      { nome: 'Gabriel Masagão', cargo: 'Full Stack', foto: '' },
+      { nome: 'Guilherme Norcia', cargo: 'Back End & Front End', foto: '' },
+      { nome: 'Iago Diniz', cargo: 'Back End & Dados', foto: '' },
+      { nome: 'Kauã Sales', cargo: 'Front End', foto: '' },
+      { nome: 'Rafael Takematsu', cargo: 'Dados', foto: '' }
     ]
   };
 
@@ -604,12 +652,6 @@ if (trilhoEquipe) {
     });
   }
 
-// Chamando a API que está rodando no IntelliJ
-fetch('http://localhost:8080/api/usuarios') 
-  .then(response => response.json())
-  .then(data => console.log(data));
-
-
   // ===== Linha do tempo (Renovaí): cada passo aparece ao entrar na tela =====
   const secaoFunciona = document.querySelector('.funciona');
   if (secaoFunciona && 'IntersectionObserver' in window) {
@@ -695,6 +737,157 @@ fetch('http://localhost:8080/api/usuarios')
         window.location.href =
           'http://localhost:8080/Renovai_Dev_1Ano_war_exploded/index.jsp';
       }
+    });
+  }
+
+  // ===== Nimo: pop-up de perguntas e respostas =====
+  const mascoteNimo = document.querySelector('.hero-mascote, .pesquisa-mascote');
+
+  if (mascoteNimo) {
+    // Edite aqui as perguntas e respostas
+    const perguntasNimo = [
+      {
+        pergunta: 'O que é o Renovaí?',
+        resposta: 'O Renovaí é uma plataforma que conecta cooperativas e recicladoras de ponta a ponta, da busca pelo material até o fechamento do acordo.'
+      },
+      {
+        pergunta: 'Como funciona a negociação?',
+        resposta: 'Tudo fica em um só lugar: proposta, contraproposta, aceite e acordo, sem a negociação espalhada entre diferentes canais.'
+      },
+      {
+        pergunta: 'Sou cooperativa. Como o Renovaí me ajuda?',
+        resposta: 'Você divulga seus materiais, encontra recicladoras interessadas e acompanha propostas e negociações em uma jornada digital.'
+      },
+      {
+        pergunta: 'Sou recicladora. Como o Renovaí me ajuda?',
+        resposta: 'Você busca cooperativas com os materiais que precisa, envia propostas diretas e acompanha tudo até a negociação ser concluída.'
+      },
+      {
+        pergunta: 'Qual o objetivo do projeto?',
+        resposta: 'Apoiar o ODS 12 da ONU (Consumo e Produção Responsáveis), em especial a meta 12.5, que propõe reduzir a geração de resíduos por meio da reciclagem e do reuso.'
+      },
+      {
+        pergunta: 'Quanto custa para cooperativas?',
+        resposta: 'Nada! O Renovaí é gratuito para cooperativas, porque acreditamos que a tecnologia deve apoiar quem move a reciclagem.'
+      },
+      {
+        pergunta: 'Quanto custa para recicladoras?',
+        resposta: 'Existem dois planos: o Essencial, por R$49,00/mês, para quem está começando a comprar, e o RenovaPRO, por R$149,00/mês, para quem compra em escala.'
+      },
+      {
+        pergunta: 'Que ferramentas o Renovaí oferece?',
+        resposta: 'Gestão de materiais e de cooperados, dashboard, mapa interativo, busca de cooperativas, propostas diretas, histórico de negociações e alertas automáticos.'
+      },
+      {
+        pergunta: 'Como faço meu cadastro?',
+        resposta: 'É só clicar em "Começar agora" no topo da página, ou escolher "Sou cooperativa" ou "Sou recicladora" e preencher o cadastro.'
+      },
+      {
+        pergunta: 'O que é o ODS 12?',
+        resposta: 'É um dos 17 Objetivos de Desenvolvimento Sustentável da ONU e trata do uso mais eficiente dos recursos naturais e da redução do desperdício.'
+      },
+      {
+        pergunta: 'Por que o projeto existe?',
+        resposta: 'No Brasil são produzidas cerca de 80 milhões de toneladas de resíduos por ano e só 8% são reciclados. O problema não é falta de consciência, e sim de conexão entre quem coleta e quem recicla.'
+      },
+      {
+        pergunta: 'Quem está por trás do Renovaí?',
+        resposta: 'Uma equipe de estudantes do 1º e 2º ano que uniu design, dados e desenvolvimento. Conheça todo mundo na página Quem Somos!'
+      },
+      {
+        pergunta: 'Como entro em contato?',
+        resposta: 'Pelo e-mail renovai.institutojef@gmail.com ou pelo Instagram @renovai.app.'
+      }
+    ];
+
+    const prefixoImg = document.querySelector('link[rel="shortcut icon"]').getAttribute('href');
+
+    const painelNimo = document.createElement('div');
+    painelNimo.className = 'nimo-chat';
+    painelNimo.setAttribute('role', 'dialog');
+    painelNimo.setAttribute('aria-label', 'Converse com o Nimo');
+    painelNimo.hidden = true;
+    painelNimo.innerHTML = `
+      <div class="nimo-chat-topo">
+        <img src="${prefixoImg}" alt="" class="nimo-chat-avatar">
+        <div class="nimo-chat-titulo">
+          <strong>Nimo</strong>
+          <span>Assistente do Renovaí</span>
+        </div>
+        <button type="button" class="nimo-chat-fechar" aria-label="Fechar">×</button>
+      </div>
+      <div class="nimo-chat-mensagens" aria-live="polite"></div>
+      <div class="nimo-chat-opcoes"></div>`;
+    document.body.appendChild(painelNimo);
+
+    const areaMensagens = painelNimo.querySelector('.nimo-chat-mensagens');
+    const areaOpcoes = painelNimo.querySelector('.nimo-chat-opcoes');
+
+    function adicionarMensagem(texto, tipo) {
+      const msg = document.createElement('p');
+      msg.className = `nimo-msg nimo-msg-${tipo}`;
+      msg.textContent = texto;
+      areaMensagens.appendChild(msg);
+      areaMensagens.scrollTop = areaMensagens.scrollHeight;
+    }
+
+    function mostrarOpcoes() {
+      areaOpcoes.innerHTML = '';
+      perguntasNimo.forEach((item) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = item.pergunta;
+        btn.addEventListener('click', () => {
+          adicionarMensagem(item.pergunta, 'usuario');
+
+          // "digitando..." antes da resposta
+          const digitando = document.createElement('p');
+          digitando.className = 'nimo-msg nimo-msg-nimo nimo-digitando';
+          digitando.innerHTML = '<i></i><i></i><i></i>';
+          areaMensagens.appendChild(digitando);
+          areaMensagens.scrollTop = areaMensagens.scrollHeight;
+
+          setTimeout(() => {
+            digitando.remove();
+            adicionarMensagem(item.resposta, 'nimo');
+          }, 600);
+        });
+        areaOpcoes.appendChild(btn);
+      });
+    }
+
+    function abrirChatNimo() {
+      if (!areaMensagens.children.length) {
+        adicionarMensagem('Olá, eu sou o Nimo! Como posso te ajudar? Escolha uma pergunta abaixo.', 'nimo');
+        mostrarOpcoes();
+      }
+      painelNimo.hidden = false;
+      mascoteNimo.classList.add('nimo-ativo');
+    }
+
+    function fecharChatNimo() {
+      painelNimo.hidden = true;
+      mascoteNimo.classList.remove('nimo-ativo');
+    }
+
+    mascoteNimo.setAttribute('role', 'button');
+    mascoteNimo.setAttribute('tabindex', '0');
+    mascoteNimo.setAttribute('aria-label', 'Abrir conversa com o Nimo');
+    mascoteNimo.style.cursor = 'pointer';
+
+    mascoteNimo.addEventListener('click', () => {
+      if (painelNimo.hidden) abrirChatNimo();
+      else fecharChatNimo();
+    });
+    mascoteNimo.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        mascoteNimo.click();
+      }
+    });
+    painelNimo.querySelector('.nimo-chat-fechar').addEventListener('click', fecharChatNimo);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !painelNimo.hidden) fecharChatNimo();
     });
   }
 });
