@@ -1026,7 +1026,7 @@ button {
   display: none;
   justify-content: center;
   gap: 40px;
-  margin-top: 50px;
+  margin-top: 45px;
   flex-wrap: wrap;
 }
 
@@ -2644,6 +2644,7 @@ html {
 .planos-pagos-cards {
   align-items: flex-start;
   gap: 36px;
+  margin-top: 30px;
 }
 
 .planos-pagos-cards .plano-card {
@@ -2657,7 +2658,7 @@ html {
 }
 
 .planos-pagos-cards .plano-card-essencial {
-  margin-top: 44px;
+  margin-top: 34px;
 }
 
 .planos-pagos-cards .plano-card-pro {
@@ -3635,11 +3636,16 @@ img.solucoes-mascote {
 .tab-cooperativa:hover,
 .tab-recicladora:hover,
 .equipe-ano:hover,
-.carrossel-seta:hover,
 .cooper:hover,
 .recicl:hover {
   filter: brightness(0.92);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.carrossel-seta:hover {
+  filter: none;
+  box-shadow: none;
+  background-color: transparent;
 }
 
 .faq-pergunta:hover {
