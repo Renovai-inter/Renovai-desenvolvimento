@@ -891,3 +891,25 @@ if (trilhoEquipe) {
     });
   }
 });
+
+// Menu hambúrguer da navbar (celular/tablet)
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.querySelector('.navbar');
+  const toggle = document.querySelector('.nav-toggle');
+  if (!navbar || !toggle) return;
+
+  const fechar = () => {
+    navbar.classList.remove('menu-aberto');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Abrir menu');
+  };
+
+  toggle.addEventListener('click', () => {
+    const aberto = navbar.classList.toggle('menu-aberto');
+    toggle.setAttribute('aria-expanded', String(aberto));
+    toggle.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+  });
+
+  navbar.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', fechar));
+  window.addEventListener('resize', () => { if (window.innerWidth > 900) fechar(); });
+});
