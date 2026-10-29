@@ -64,11 +64,23 @@ button{
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 28px;
-
-    margin-left: auto;
+    flex: 1;
+    gap: 48px;
 
     list-style: none;
+}
+
+/* links centralizados na barra, botão "Começar agora" na ponta direita */
+.nav-links li:first-child {
+    margin-left: auto;
+}
+
+.nav-links li:nth-last-child(2) {
+    margin-right: auto;
+}
+
+.nav-links li:last-child {
+    margin-left: 0;
 }
 
 .nav-links a {
@@ -144,7 +156,7 @@ button {
 
 .sobreNos{
   background-color: #F8F6F2;
-  color: #416b4c;
+  color: #0000;
   border-color: #5E986B;
   border-style: solid;
   border-radius: 29px;
@@ -262,7 +274,7 @@ button {
 
 .titulo-beneficios {
     display: flex;
-    align-items:flex-end;
+    align-items: baseline;
     justify-content:center;
     gap: 10px;
     color: #456749;
@@ -1250,8 +1262,8 @@ button {
 }
 
 .btn-sou-cooperativa img {
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
 }
 
 .btn-sou-cooperativa {
@@ -1363,7 +1375,7 @@ button {
   position: absolute;
   left: 60px;
   width: 1475px;
-  bottom: -20px;
+  bottom: 40px;
   font-size: 90px;
   font-weight: 900;
   z-index: 0;
@@ -1386,7 +1398,7 @@ button {
 .solucoes-celular-laptop {
   width: 740px;
   position: absolute;
-  bottom: -30px;
+  bottom: 30px;
   left: -20px;
   z-index: 3;
 }
@@ -1430,10 +1442,16 @@ button {
 }
 
 .sobreNos {
-  color: #519058;
+  background-color: #519058;
+  color: #fff;
   justify-content: center;
   align-items: center;
   border: 3px solid #519058;
+}
+
+/* a seta do SVG é verde; fica branca sobre o fundo verde */
+.sobreNos img {
+  filter: brightness(0) invert(1);
 }
 
 .solucoes-mascote {
@@ -1455,7 +1473,7 @@ button {
   color: #456749;
   margin-bottom: 60px;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   gap: 10px;
 }
@@ -3341,7 +3359,7 @@ img.solucoes-mascote {
 }
 
 .btn-sou-cooperativa img {
-  transform: translateY(8px);
+  transform: none;
 }
 
 /* Número ao lado do título de cada passo */
@@ -3576,12 +3594,14 @@ img.solucoes-mascote {
 /* ===== Hover (todas as páginas) ===== */
 
 .nav-links a:not(.cta1) {
-  transition: color 0.2s ease, border-color 0.2s ease;
+  display: inline-block;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .nav-links a:not(.cta1):hover {
   color: #456749;
   border-bottom: 2px solid #456749;
+  transform: scale(1.12);
 }
 
 .cta1,
@@ -3696,4 +3716,97 @@ a.conhecaRenovai,
 a.sobreNos {
   box-sizing: border-box;
   text-decoration: none;
+}
+
+/* Borda clara nos botões do hero */
+.conhecaRenovai,
+.sobreNos {
+  border: 2px solid #F8F6F2;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Hovers dos botões (cores do protótipo) ===== */
+.cta1,
+.conhecaRenovai,
+.sobreNos,
+.btn-sou-cooperativa,
+.btn-sou-recicladora {
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-sou-cooperativa img,
+.btn-sou-recicladora img {
+  transition: filter 0.2s ease;
+}
+
+/* rosa: Começar agora, Conheça o Renovaí, Recicladoras */
+.cta1:hover,
+.conhecaRenovai:hover,
+.btn-sou-recicladora:hover {
+  filter: none;
+  background: #C04570;
+  color: #FFD3E6 !important;
+}
+
+.btn-sou-recicladora:hover {
+  color: #FFA9CC !important;
+}
+
+.btn-sou-recicladora:hover img {
+  filter: brightness(0) invert(75%) sepia(35%) saturate(1100%) hue-rotate(295deg) brightness(105%);
+}
+
+/* verde escuro: Quem somos, Cooperativas */
+.sobreNos:hover,
+.btn-sou-cooperativa:hover {
+  filter: none;
+  background: #43664A;
+  color: #D5E8C8 !important;
+}
+
+.sobreNos:hover img,
+.btn-sou-cooperativa:hover img {
+  filter: brightness(0) invert(90%) sepia(18%) saturate(500%) hue-rotate(50deg) brightness(98%);
+}
+
+/* ===== Botão "Sobre nós" da página Renovaí: fundo claro, borda e texto verdes ===== */
+.solucoes-hero .sobreNos {
+  background: #F8F6F2;
+  color: #456749;
+  border: 3px solid #519058;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+.solucoes-hero .sobreNos img {
+  filter: none;
+}
+
+.solucoes-hero .sobreNos:hover {
+  filter: none;
+  background: #D0E8D4;
+  color: #456749 !important;
+}
+
+.solucoes-hero .sobreNos:hover img {
+  filter: none;
+}
+
+/* ===== Fundo verde com topo curvo atrás de Perguntas Frequentes + Experimente ===== */
+.fundo-faq {
+  width: 100%;
+  /* topo curvo (imagem) proporcional à largura + verde liso preenchendo o resto, em qualquer tela */
+  background:
+    url("../images/fundo-faq.svg") center top / 100% auto no-repeat,
+    linear-gradient(#EBF0E1, #EBF0E1) 0 3vw / 100% calc(100% - 3vw) no-repeat;
+  padding: 90px 0 100px;
+  margin-bottom: -100px;
+}
+
+.fundo-faq .faq {
+  background-color: transparent;
+}
+
+.fundo-faq .experimente {
+  margin-top: 60px;
 }
