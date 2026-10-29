@@ -372,7 +372,7 @@ a {
 
     .titulo-beneficios {
         justify-content: center;
-        align-items: center;
+        align-items: baseline;
         gap: 8px;
         font-size: clamp(28px, 4.5vw, 38px);
     }
