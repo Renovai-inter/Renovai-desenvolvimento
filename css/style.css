@@ -219,7 +219,6 @@ button {
 .hero-celular {
   position: absolute;
   width: 425px;
-  top: 10px;
   right: 13%;
   z-index: 5;
 }
