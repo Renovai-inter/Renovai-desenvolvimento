@@ -1675,3 +1675,49 @@ a {
         margin-top: 6px;
     }
 }
+
+/* =========================================
+   QUEM SOMOS: ESPAÇAMENTO DAS IMAGENS (TABLET/CELULAR)
+========================================= */
+
+@media (max-width: 900px) {
+    /* Ilustrações dos passos 1 e 2 não podem colar no título/texto */
+    .caminho-passo > .caminho-conteudo {
+        margin-top: 20px;
+    }
+
+    .caminho-conteudo {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .caminho-ilustracao img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Folhas e hastes ficavam para fora do card, por cima do texto vizinho */
+    .caminho-feature img {
+        display: none;
+    }
+
+    .caminho-feature {
+        min-height: 0;
+    }
+
+    .caminho-passo-3-grid {
+        gap: 20px;
+    }
+
+    .caminho-passo-3-celular {
+        margin: 8px 0 16px;
+    }
+
+    .pesquisa-imagens {
+        margin: 8px 0 24px;
+    }
+
+    .pesquisa-img-wrap {
+        width: min(300px, 100%);
+    }
+}

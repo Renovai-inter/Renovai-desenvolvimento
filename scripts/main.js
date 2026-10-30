@@ -290,19 +290,19 @@ if (trilhoEquipe) {
   // Edite aqui os membros de cada ano
   const equipe = {
     1: [
-      { nome: 'Davi Sobral', cargo: 'Full Stack', foto: '' },
-      { nome: 'Joel Gracek', cargo: 'Back End', foto: '' },
-      { nome: 'Luiza Caravaggio', cargo: 'Back End', foto: '' },
-      { nome: 'Lukas Theodoro', cargo: 'Dados & Back End', foto: '' },
-      { nome: 'Paola Pietropoli', cargo: 'UX/UI Design', foto: '' }
+      { nome: 'Davi Sobral', cargo: 'Full Stack', foto: '../images/Davi.jpg' },
+      { nome: 'Joel Gracek', cargo: 'Back End', foto: '../images/Joel.jpg' },
+      { nome: 'Luiza Caravaggio', cargo: 'Back End', foto: '../images/Luiza.jpg' },
+      { nome: 'Lukas Theodoro', cargo: 'Dados & Back End', foto: '../images/Lukas.jpg' },
+      { nome: 'Paola Pietropoli', cargo: 'UX/UI Design', foto: '../images/Paola.jpg' }
     ],
     2: [
-      { nome: 'Caio França', cargo: 'Dados & Front End', foto: '' },
-      { nome: 'Gabriel Masagão', cargo: 'Full Stack', foto: '' },
-      { nome: 'Guilherme Norcia', cargo: 'Back End & Front End', foto: '' },
-      { nome: 'Iago Diniz', cargo: 'Back End & Dados', foto: '' },
-      { nome: 'Kauã Sales', cargo: 'Front End', foto: '' },
-      { nome: 'Rafael Takematsu', cargo: 'Dados', foto: '' }
+      { nome: 'Caio França', cargo: 'Dados & Front End', foto: '../images/Caio.jpg' },
+      { nome: 'Gabriel Masagão', cargo: 'Full Stack', foto: '../images/Gabriel.jpg' },
+      { nome: 'Guilherme Norcia', cargo: 'Back End & Front End', foto: '../images/Guilherme.jpg' },
+      { nome: 'Iago Diniz', cargo: 'Back End & Dados', foto: '../images/Iago.jpg' },
+      { nome: 'Kauã Sales', cargo: 'Front End', foto: '../images/Kauã.jpg' },
+      { nome: 'Rafael Takematsu', cargo: 'Dados', foto: '../images/Rafael.jpg' }
     ]
   };
 
@@ -735,7 +735,7 @@ if (trilhoEquipe) {
       if (cliquesLogo >= 5) {
         cliquesLogo = 0;
         window.location.href =
-          'http://localhost:8080/Renovai_Dev_1Ano_war_exploded/index.jsp';
+          'https://renovai-backend-athb.onrender.com/login';
       }
     });
   }
