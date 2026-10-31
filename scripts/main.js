@@ -739,6 +739,7 @@ if (trilhoEquipe) {
       }
     });
   }
+  
 
   // ===== Nimo: pop-up de perguntas e respostas =====
   const mascoteNimo = document.querySelector('.hero-mascote, .pesquisa-mascote');
