@@ -1642,9 +1642,11 @@ a {
 
     .nav-links {
         display: none;
+        flex: 0 0 100%;
         flex-direction: column;
         align-items: stretch;
         width: 100%;
+        margin-left: 0;
         gap: 4px;
         padding-top: 12px;
     }
