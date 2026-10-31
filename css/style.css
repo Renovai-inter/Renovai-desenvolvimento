@@ -3815,3 +3815,16 @@ a.sobreNos {
 .fundo-faq .experimente {
   margin-top: 60px;
 }
+
+/* "Sou recicladora" -> "Experimente o app": texto em destaque */
+.btn-sou-recicladora.destaque {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #FFFFFF !important;
+  background: #C04570;
+  box-shadow: 0 4px 14px rgba(192, 69, 112, 0.45);
+}
+
+.btn-sou-recicladora.destaque img {
+  filter: brightness(0) invert(1);
+}
