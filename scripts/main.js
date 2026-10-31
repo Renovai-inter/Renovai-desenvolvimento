@@ -739,7 +739,7 @@ if (trilhoEquipe) {
       }
     });
   }
-  
+
 
   // ===== Nimo: pop-up de perguntas e respostas =====
   const mascoteNimo = document.querySelector('.hero-mascote, .pesquisa-mascote');
@@ -915,26 +915,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => { if (window.innerWidth > 900) fechar(); });
 });
 
-// Botão "Sou recicladora": no hover e ao clicar, o texto muda para "Experimente o app"
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.btn-sou-recicladora').forEach(btn => {
-    const texto = Array.from(btn.childNodes).find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim());
-    if (!texto) return;
-    const original = texto.textContent;
-    const novo = '\n                    Experimente o app\n                ';
-    let clicado = false;
-    let sobre = false;
-    const atualizar = () => {
-      const ativo = clicado || sobre;
-      texto.textContent = ativo ? novo : original;
-      btn.classList.toggle('destaque', ativo);
-    };
-
-    btn.addEventListener('mouseenter', () => { sobre = true; atualizar(); });
-    btn.addEventListener('mouseleave', () => { sobre = false; atualizar(); });
-    btn.addEventListener('click', () => { clicado = !clicado; atualizar(); });
-  });
-});
 
 // Botão "Sou cooperativa": abre o app do Renovaí
 document.addEventListener('DOMContentLoaded', () => {
