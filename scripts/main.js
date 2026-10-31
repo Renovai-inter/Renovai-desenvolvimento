@@ -739,6 +739,7 @@ if (trilhoEquipe) {
       }
     });
   }
+  
 
   // ===== Nimo: pop-up de perguntas e respostas =====
   const mascoteNimo = document.querySelector('.hero-mascote, .pesquisa-mascote');
@@ -932,5 +933,14 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('mouseenter', () => { sobre = true; atualizar(); });
     btn.addEventListener('mouseleave', () => { sobre = false; atualizar(); });
     btn.addEventListener('click', () => { clicado = !clicado; atualizar(); });
+  });
+});
+
+// Botão "Sou cooperativa": abre o app do Renovaí
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.btn-sou-cooperativa').forEach(btn => {
+    btn.addEventListener('click', () => {
+      window.open('https://renovai-piwe.onrender.com', '_blank', 'noopener');
+    });
   });
 });
