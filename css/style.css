@@ -2587,6 +2587,32 @@ button {
   .valores-item { transition: none; }
 }
 
+/* Celular: todos os valores empilhados, sem rolagem fixa nem troca de grupos */
+@media (max-width: 768px) {
+  .valores-pista { height: auto !important; }
+  .valores-pin { position: static; }
+  .valores-grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 28px 20px;
+  }
+  .valores-letras {
+    flex-direction: row;
+    justify-content: center;
+    line-height: 1;
+  }
+  .valores-letras span { font-size: 48px; }
+  .valores-lista { min-height: 0 !important; }
+  .valores.com-js .valores-item {
+    display: block !important;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .valores .valores-item h4 { width: auto; margin-right: 18px; }
+}
+
 .valores-item h4 {
   font-size: 18px;
   font-weight: 700;
