@@ -1968,11 +1968,13 @@ button {
   grid-column: 1;
   grid-row: 2;
   min-height: 100px;
+  background-color: rgba(149, 198, 154, 0.23);
 }
 .importa-blank2 {
   grid-column: 2;
   grid-row: 1;
   min-height: 100px;
+  background-color: rgba(149, 198, 154, 0.23);
 }
 .importa-stat2 {
   grid-column: 2;
@@ -2168,6 +2170,7 @@ button {
   background-color: #FAF9F6;
   border-radius: 20px;
   padding: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .caminho-feature-icone {
@@ -3772,29 +3775,6 @@ a.sobreNos {
 .sobreNos:hover img,
 .btn-sou-cooperativa:hover img {
   filter: brightness(0) invert(90%) sepia(18%) saturate(500%) hue-rotate(50deg) brightness(98%);
-}
-
-/* ===== Botão "Sobre nós" da página Renovaí: fundo claro, borda e texto verdes ===== */
-.solucoes-hero .sobreNos {
-  background: #F8F6F2;
-  color: #456749;
-  border: 3px solid #519058;
-  box-shadow: none;
-  font-weight: 700;
-}
-
-.solucoes-hero .sobreNos img {
-  filter: none;
-}
-
-.solucoes-hero .sobreNos:hover {
-  filter: none;
-  background: #D0E8D4;
-  color: #456749 !important;
-}
-
-.solucoes-hero .sobreNos:hover img {
-  filter: none;
 }
 
 /* ===== Fundo verde com topo curvo atrás de Perguntas Frequentes + Experimente ===== */
