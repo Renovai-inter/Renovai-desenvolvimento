@@ -1770,3 +1770,16 @@ a {
         width: min(300px, 100%);
     }
 }
+
+/* Quem somos: retângulos decorativos menores e atrás do título em tablet/celular */
+@media (max-width: 900px) {
+    .hero-quem-somos .hero-img-1,
+    .hero-quem-somos .hero-img-2,
+    .hero-quem-somos .hero-img-3,
+    .hero-quem-somos .hero-img-4,
+    .hero-quem-somos .hero-img-5 {
+        max-width: 24%;
+        opacity: 0.5;
+        margin-top: 90px;
+    }
+}
