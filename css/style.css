@@ -3522,8 +3522,43 @@ img.solucoes-mascote {
   color: #456749;
 }
 
+/* O hero desce 80px (top: 80px) e o fundo transborda: corta na base e
+   reserva o espaço, para não cobrir a seção seguinte */
+.hero-quem-somos {
+  clip-path: inset(-400px 0 0 0);
+  margin-bottom: 80px;
+}
+
+.porque-importa {
+  position: relative;
+  z-index: 2;
+}
+
+/* Monitor no lugar do celular do hero (Quem somos) */
+.hero-monitor {
+  width: 560px;
+  max-width: 55%;
+  right: 6%;
+  top: 150px;
+}
+
 .pesquisa-imagens {
+  position: relative;
   justify-self: center;
+}
+
+.pesquisa-folhas {
+  position: absolute;
+  left: -40px;
+  bottom: -40px;
+  width: 45%;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.pesquisa-monitor {
+  position: relative;
+  z-index: 2;
 }
 
 .pesquisa-img-wrap {
@@ -3533,6 +3568,12 @@ img.solucoes-mascote {
   border-radius: 28px;
   overflow: hidden;
   background-color: #D9D9D9;
+}
+
+.pesquisa-monitor {
+  display: block;
+  width: min(420px, 100%);
+  height: auto;
 }
 
 .pesquisa-img-wrap + .pesquisa-img-wrap {

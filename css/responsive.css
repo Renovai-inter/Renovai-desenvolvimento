@@ -1397,6 +1397,9 @@ a {
 
     .card-beneficio {
         max-width: none;
+        width: auto;
+        flex: 1 1 0;
+        margin-right: 0;
     }
 }
 
@@ -1500,7 +1503,7 @@ a {
     }
 
     .experimente-celular {
-        top: 0;
+        top: 30px;
         left: 0;
     }
 
@@ -1512,6 +1515,50 @@ a {
 
     .experimente-card {
         overflow: hidden;
+    }
+}
+
+/* Tablets largos (iPad Pro): card em linha */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .experimente-card {
+        padding: 48px 48px 48px 0;
+        gap: 32px;
+        min-height: 420px;
+    }
+
+    .experimente-img {
+        width: 36%;
+        min-width: 280px;
+        margin: 0 0 0 24px;
+        align-self: stretch;
+    }
+
+    .experimente-celular {
+        top: 40px;
+        left: 0;
+    }
+
+    .experimente-folhas {
+        left: -10px;
+        bottom: -40px;
+        width: 60%;
+    }
+
+    .experimente-descricao {
+        font-size: 15px;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+    .experimente-celular {
+        top: 60px;
+    }
+
+    .experimente-folhas {
+        bottom: -60px;
     }
 }
 
